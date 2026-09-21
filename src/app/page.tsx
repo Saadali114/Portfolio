@@ -1,0 +1,30 @@
+import React from "react";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import LearningJourney from "@/components/LearningJourney";
+import Education from "@/components/Education";
+import GithubSection from "@/components/GithubSection";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+
+export default function Home() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <LearningJourney />
+        <Education />
+        <GithubSection />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
