@@ -28,14 +28,20 @@ export interface LearningMilestone {
 
 export const personalData = {
   name: "Saad Ali",
-  greeting: "Hi, I'm Saad Ali 👋",
-  heroHeading: "Building Software. Learning Every Day.",
+  greeting: "Hi, I'm Saad Ali",
+  heroHeading: "Building Software.\nLearning Every Day.",
   heroSubtitle:
     "BSc Computer Science student and Full-Stack Developer focused on building practical web applications and exploring AI-powered solutions.",
+  roles: [
+    "BSc Computer Science Student",
+    "Full-Stack Developer",
+    "AI & Web Developer",
+  ],
   role: "BSc Computer Science Student | Full-Stack Developer | AI & Web Developer",
   location: "Mumbai, India",
   careerGoal:
     "I am a Computer Science student building real-world software projects and preparing for software engineering internships and future software engineering roles.",
+  aboutHeading: "Building. Breaking. Learning.",
   aboutText:
     "I’m a BSc Computer Science student from Mumbai with a strong interest in software development, full-stack web applications, and AI-powered systems. I enjoy turning ideas into working applications and learning new technologies by building real projects.",
   learningEthos: [
@@ -47,7 +53,7 @@ export const personalData = {
   ],
   links: {
     github: "https://github.com/Saadali114",
-    linkedin: "https://linkedin.com/in/placeholder-saadali", // Replace with your LinkedIn profile
+    linkedin: "https://www.linkedin.com/in/idrisi-shahabuddin-2002a8333/",
     email: "saadali.dev.placeholder@example.com", // Replace with your direct email address
   },
   education: {
@@ -61,34 +67,33 @@ export const personalData = {
 export const skillsData: SkillCategory[] = [
   {
     category: "Frontend",
-    description: "Modern, responsive, component-driven user interfaces",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js", "Tailwind CSS"],
+    description: "Component architectures, responsive design & state systems",
+    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
     category: "Backend",
-    description: "Scalable server architectures and API services",
+    description: "Robust server runtimes, controllers & RESTful endpoints",
     skills: ["Node.js", "Express.js", "REST APIs"],
   },
   {
     category: "Database",
-    description: "Relational and document storage schemas & ORMs",
+    description: "Document models, relational schemas & type-safe ORMs",
     skills: ["MongoDB", "PostgreSQL", "Prisma"],
   },
   {
     category: "Tools",
-    description: "Version control and developer workflows",
+    description: "Version control workflows, environments & build tools",
     skills: ["Git", "GitHub", "VS Code"],
   },
   {
-    category: "AI / Other",
-    description: "Applied machine intelligence and decentralized exploration",
-    skills: [
-      "OCR",
-      "Computer Vision",
-      "AI-powered document processing",
-      "Blockchain fundamentals",
-      "GIS concepts",
-    ],
+    category: "AI / Computer Vision",
+    description: "Applied visual intelligence & automated extraction pipelines",
+    skills: ["OCR", "Computer Vision", "AI-powered document processing"],
+  },
+  {
+    category: "Other Technologies",
+    description: "Decentralized consensus concepts & spatial coordinates",
+    skills: ["Blockchain", "GIS"],
   },
 ];
 
@@ -107,7 +112,7 @@ export const projectsData: ProjectItem[] = [
       "Next.js",
       "TypeScript",
       "Node.js",
-      "Express.js",
+      "Express",
       "PostgreSQL",
       "Prisma",
       "AI Vision",
@@ -123,9 +128,9 @@ export const projectsData: ProjectItem[] = [
       "AI-assisted document analysis",
       "Multilingual document support",
     ],
-    githubUrl: "https://github.com/Saadali114", // Marked: Update with project repo if hosted separately
-    liveDemoUrl: "#ildrvs-demo-preview", // Placeholder demo link
-    isPlaceholderDemo: true,
+    githubUrl: "https://github.com/Saadali114",
+    liveDemoUrl: "https://ilrd-frontend.onrender.com/",
+    isPlaceholderDemo: false,
   },
   {
     id: "blockchain-scholarship",
@@ -152,43 +157,43 @@ export const projectsData: ProjectItem[] = [
       "Cryptographic authentication",
       "Database integration with MongoDB",
     ],
-    githubUrl: "https://github.com/Saadali114", // Marked: Update with repository URL
+    githubUrl: "https://github.com/Saadali114",
   },
 ];
 
 export const learningMilestones: LearningMilestone[] = [
   {
-    phase: "Phase 1",
+    phase: "Stage 01",
     title: "Foundations",
-    description: "Core computer science and web standards building blocks",
+    description: "Core computer science fundamentals, DOM manipulation & standard protocols",
     items: ["HTML", "CSS", "JavaScript"],
     status: "completed",
   },
   {
-    phase: "Phase 2",
-    title: "Modern Web Development",
-    description: "Type-safe, componentized reactive architectures & utility styling",
+    phase: "Stage 02",
+    title: "Modern Web",
+    description: "Type-safe reactive component architectures, utility styling & SSR paradigms",
     items: ["TypeScript", "React", "Tailwind CSS", "Next.js"],
     status: "completed",
   },
   {
-    phase: "Phase 3",
-    title: "Backend Development",
-    description: "Server runtimes, middleware, and decoupled RESTful APIs",
+    phase: "Stage 03",
+    title: "Backend",
+    description: "Asynchronous I/O runtimes, middleware architecture & decoupled REST services",
     items: ["Node.js", "Express.js", "REST APIs"],
     status: "completed",
   },
   {
-    phase: "Phase 4",
-    title: "Databases & Schemas",
-    description: "Data modeling, schema migrations, and relational ORM integrations",
+    phase: "Stage 04",
+    title: "Databases",
+    description: "NoSQL document collections, relational normalization & migrations with Prisma",
     items: ["MongoDB", "PostgreSQL", "Prisma"],
     status: "completed",
   },
   {
-    phase: "Phase 5",
+    phase: "Stage 05",
     title: "Advanced Exploration",
-    description: "Specialized systems under active study and prototyping",
+    description: "Document AI pipelines, vision models, decentralized smart contracts & GIS coordinates",
     items: ["AI", "OCR", "Computer Vision", "Blockchain", "GIS"],
     status: "exploring",
   },
@@ -203,4 +208,10 @@ export const codingShowcase = {
     { label: "Focus", value: "Full-Stack & AI Systems" },
     { label: "Methodology", value: "Hands-on Project Building" },
   ],
+};
+
+export const contactSectionData = {
+  heading: "Let's build something.",
+  subtitle:
+    "I'm always interested in learning, building, and connecting with other developers.",
 };

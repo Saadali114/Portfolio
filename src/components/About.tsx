@@ -1,82 +1,76 @@
 import React from "react";
-import { BookOpen, Hammer, CheckCircle2, Rocket, RefreshCw, GraduationCap, MapPin, Target } from "lucide-react";
+import { BookOpen, Hammer, CheckCircle2, Rocket, RefreshCw, GraduationCap, MapPin, Target, ArrowRight } from "lucide-react";
 import { personalData } from "@/data/portfolioData";
 
 export default function About() {
   const stepIcons = [
-    <BookOpen key="learn" className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-400" />,
-    <Hammer key="build" className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />,
-    <CheckCircle2 key="test" className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />,
-    <Rocket key="deploy" className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />,
-    <RefreshCw key="improve" className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />,
+    <BookOpen key="learn" className="w-4 h-4 text-indigo-400" />,
+    <Hammer key="build" className="w-4 h-4 text-violet-400" />,
+    <CheckCircle2 key="test" className="w-4 h-4 text-emerald-400" />,
+    <Rocket key="deploy" className="w-4 h-4 text-cyan-400" />,
+    <RefreshCw key="improve" className="w-4 h-4 text-amber-400" />,
   ];
 
   return (
-    <section id="about" className="py-16 sm:py-24 lg:py-28 relative">
+    <section id="about" className="py-20 sm:py-28 lg:py-36 relative border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
-        <div className="flex flex-col items-start gap-2 mb-10 sm:mb-14">
+        {/* Editorial Section Header */}
+        <div className="space-y-4 mb-16 max-w-3xl">
           <span className="text-xs font-mono font-medium tracking-wider text-indigo-400 uppercase bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full">
-            Introduction
+            Editorial • Perspective
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            About Me
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            {personalData.aboutHeading}
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full mt-1" />
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-normal">
+            {personalData.aboutText}
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
-          {/* Bio text column */}
-          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
-            <div className="p-5 sm:p-8 rounded-2xl bg-surface-200/70 border border-white/[0.08] backdrop-blur-md space-y-4">
-              <p className="text-gray-200 text-sm sm:text-base md:text-lg leading-relaxed">
-                {personalData.aboutText}
-              </p>
-
-              <div className="pt-3 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-400">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-                  <span>Based in {personalData.location}</span>
-                </div>
-                <div className="hidden sm:block text-gray-600">•</div>
-                <div className="flex items-center gap-2">
-                  <GraduationCap className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-                  <span>BSc Computer Science (Expected 2027)</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Career Objective Box */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-indigo-950/30 to-violet-950/20 border border-indigo-500/20 space-y-2.5 sm:space-y-3">
-              <div className="flex items-center gap-2 text-indigo-300 font-medium text-xs sm:text-sm">
-                <Target className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-                <span>Primary Focus &amp; Objective</span>
-              </div>
-              <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed">
+        {/* Two-Column Editorial Details */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Left: Background & Objective */}
+          <div className="lg:col-span-6 space-y-6">
+            <div className="p-6 sm:p-8 rounded-2xl card-cinematic space-y-4">
+              <h3 className="text-lg font-semibold text-white tracking-tight flex items-center gap-2">
+                <Target className="w-4 h-4 text-indigo-400" />
+                <span>Career Objective &amp; Approach</span>
+              </h3>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
                 {personalData.careerGoal}
               </p>
+
+              <div className="pt-4 border-t border-white/[0.06] flex flex-wrap items-center gap-4 text-xs font-mono text-gray-400">
+                <div className="flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>{personalData.location}</span>
+                </div>
+                <span className="text-gray-600">•</span>
+                <div className="flex items-center gap-1.5">
+                  <GraduationCap className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Expected Graduation 2027</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Learning Methodology Flow column */}
-          <div className="lg:col-span-5 space-y-4 w-full">
-            <div className="p-5 sm:p-6 rounded-2xl bg-surface-200/60 border border-white/[0.08]">
-              <div className="mb-4">
-                <h3 className="text-sm sm:text-base font-semibold text-white">
-                  Continuous Learning Loop
+          {/* Right: The 5-Step Engineering Loop */}
+          <div className="lg:col-span-6 space-y-4">
+            <div className="p-6 sm:p-8 rounded-2xl card-cinematic space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-base font-semibold text-white tracking-tight">
+                  The Engineering Cycle
                 </h3>
-                <p className="text-xs text-gray-400 mt-0.5">
-                  How I approach every new technology, architecture, and project
-                </p>
+                <span className="text-xs font-mono text-gray-500">Iterative Growth</span>
               </div>
 
-              <div className="space-y-2.5 sm:space-y-3">
+              <div className="space-y-2.5 pt-2">
                 {personalData.learningEthos.map((item, index) => (
                   <div
                     key={item.title}
-                    className="flex items-center gap-3 p-2.5 sm:p-3 rounded-xl bg-surface-100/50 border border-white/[0.05] hover:border-indigo-500/30 transition-all duration-200"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-[#090b11] border border-white/[0.04] hover:border-indigo-500/25 transition-all duration-200"
                   >
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-surface-300 flex items-center justify-center flex-shrink-0 border border-white/[0.08]">
+                    <div className="w-8 h-8 rounded-lg bg-[#111420] flex items-center justify-center flex-shrink-0 border border-white/[0.06]">
                       {stepIcons[index]}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -93,7 +87,7 @@ export default function About() {
                       </p>
                     </div>
                     {index < personalData.learningEthos.length - 1 && (
-                      <span className="text-xs font-mono text-gray-500 hidden sm:inline">
+                      <span className="text-xs font-mono text-gray-600 hidden sm:inline">
                         ↓
                       </span>
                     )}

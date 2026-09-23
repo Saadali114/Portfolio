@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import LanguageCursorEffect from "@/components/LanguageCursorEffect";
 
 export const metadata: Metadata = {
   title: "Saad Ali | Full-Stack Developer & BSc Computer Science Student",
@@ -49,7 +50,8 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="bg-[#090a0f] text-[#f3f4f6] min-h-screen antialiased selection:bg-indigo-600/30 selection:text-white">
+      <body className="bg-[#090a0f] text-[#f3f4f6] min-h-screen antialiased selection:bg-indigo-600/30 selection:text-white relative">
+        <LanguageCursorEffect />
         {children}
       </body>
     </html>

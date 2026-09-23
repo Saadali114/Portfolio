@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #090a0f;
-  --foreground: #f3f4f6;
+  --background: #07080b;
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --accent: #6366f1;
 }
 
 *, *::before, *::after {
@@ -33,70 +35,80 @@ body {
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.35);
+  background: rgba(99, 102, 241, 0.3);
   color: #ffffff;
 }
 
-/* Custom Sleek Scrollbar */
+/* Minimal Sleek Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #090a0f;
+  background: #07080b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e2235;
+  background: #181b24;
   border-radius: 9999px;
-  border: 1px solid #090a0f;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #313752;
+  background: #282e3d;
 }
 
-/* Developer Ambient Background Grid */
-.bg-grid-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
+/* Atmospheric subtle background lighting */
+.bg-ambient-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 36px 36px;
 }
 
-.bg-dot-pattern {
-  background-image: radial-gradient(rgba(99, 102, 241, 0.12) 1px, transparent 1px);
-  background-size: 20px 20px;
+.radial-glow-top {
+  background: radial-gradient(circle 600px at 50% 0%, rgba(99, 102, 241, 0.08), transparent 70%);
 }
 
-/* Card Glow border utility */
-.card-glow {
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Cinematic card surface */
+.card-cinematic {
+  background-color: #0c0e15;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card-glow:hover {
-  border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.15);
+.card-cinematic:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(99, 102, 241, 0.12);
   transform: translateY(-2px);
 }
 
-/* Code block styled */
-.code-syntax-keyword {
-  color: #f43f5e;
-}
-.code-syntax-func {
-  color: #38bdf8;
-}
-.code-syntax-string {
-  color: #34d399;
-}
-.code-syntax-comment {
-  color: #64748b;
-}
-
-/* Responsive typography utilities */
 @media (max-width: 640px) {
-  .card-glow:hover {
-    transform: none; /* Avoid jitter on mobile touch */
+  .card-cinematic:hover {
+    transform: none;
   }
 }
+
+/* Programming Language Cursor Particles */
+@keyframes particleFloatFade {
+  0% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) translate3d(0, 0, 0) rotate(0deg) scale(0.9);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translate3d(calc(var(--delta-x) * 0.25), calc(var(--delta-y) * 0.25), 0) rotate(calc(var(--rotation) * 0.25)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate3d(var(--delta-x), var(--delta-y), 0) rotate(var(--rotation)) scale(0.82);
+  }
+}
+
+.particle-fade-anim {
+  animation: particleFloatFade var(--duration, 900ms) cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+
